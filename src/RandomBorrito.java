@@ -1,18 +1,33 @@
 import java.util.Random;
 public class RandomBorrito {
     public static void main (String[] args){
+        //decalring a Random class
+        Random random = new Random();
+        int randomRice, randomBeans, randomMeat, randomSalsa, randomVeggies;
+
+        //Storing my borrito and the name of container that is the array
+        String[] burritoOrder = new String[10];
+
+        //Borrito options and their randomness
         String[] rice = {"white rice", "brown rice", "no rice"};
-        String[] beat = {"chicken", "steak", "carnidas", "chorizo", "sofritas", "veggies"};
+        String[] meat = {"chicken", "steak", "carnidas", "chorizo", "sofritas", "veggies"};
         String[] beans = {"pinto", "black", "no beans"};
-        String[] Salsa = {"mild", "medium", "hot", "no salsa"};
+        String[] salsa = {"mild", "medium", "hot", "no salsa"};
         String[] veggies = {"lettuce", "fajita", "veggies", "no veggies"};
-        Random r = new Random();
-        int index;
-        for (int b = 1; b< rice.length ; b++) {
-            System.out.print( rice[b] + ",");
-            index = 0 + r.nextInt(3);
-            System.out.print(rice[index]);
+
+        // for loop initiated to put the borrito options inside my borrito at random
+        for (int b = 0; b< burritoOrder.length; b++) {
+            randomRice = random.nextInt(rice.length);
+            randomMeat = random.nextInt(meat.length);
+            randomBeans = random.nextInt(beans.length);
+            randomSalsa = random.nextInt(salsa.length);
+            randomVeggies = random.nextInt(veggies.length);
+
+            //printing out Burrito Orders
+            burritoOrder[b] = "Burrito Oder " + (b+1) + ":" + rice[randomRice] + "," + meat[randomMeat] +"," + beans[randomRice] +"," + rice[randomBeans] +"," + salsa[randomSalsa] + "," + veggies[randomVeggies];
+            System.out.println(burritoOrder[b]);
         }
+
         }
 
     }
